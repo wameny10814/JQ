@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li>item01</li>
+            <li>item02</li>
+        </ul>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            $('li').append('<li>item03</li>');
+            $('ul').append('<li>item04</li>');
+            $("ul").prepend("<li>item05</li>");
+            $("ul").before("<li>item06</li>");
+            $("ul").after("<li>item07</li>");
+        </script>
+       
+    </body>
+</html>

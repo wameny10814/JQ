@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous"
+/>
+<style>
+    td{
+        border: 1px solid gray;
+        width: 100px;
+        height: 50px;
+    }
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+            <td>td4</td>
+        </tr>
+        
+        <tr>
+            <td>td5</td>
+            <td>td6</td>
+            <td>td7</td>
+            <td>td8</td>
+        </tr>
+        <tr>
+            <td>td1</td>
+            <td>td2</td>
+            <td>td3</td>
+            <td>td4</td>
+        </tr>
+
+    </table>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+                $("td").click((e) => {
+                console.log(e.currentTarget);
+                $(e.currentTarget).css("background", "lightblue").nextAll().css("background", "lightblue").end().parent().nextAll().css("background", "lightblue");
+                
+            });
+    </script> 
+</body>
+</html>

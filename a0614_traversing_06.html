@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>td1</td>
+                <td><h2>td2</h2></td>
+                <td>td3</td>
+                <td>td4</td>
+                <td>td5</td>
+            </tr>
+            <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+                <td>td4</td>
+                <td>td5</td>
+            </tr>
+            <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+                <td><h3>td4</h3></td>
+                <td>td5</td>
+            </tr>
+            <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+                <td>td4</td>
+                <td>td5</td>
+            </tr>
+            <tr>
+                <td>td1</td>
+                <td>td2</td>
+                <td>td3</td>
+                <td>td4</td>
+                <td>td5</td>
+            </tr>
+        </table>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            // $("h3").css("color", "blue");
+            // $("h3").css("background-color", "pink");
+            // $("h2").hover(
+            //     function () {
+            //         $("h2").css("background-color", "pink");
+            //     },
+            //     function () {
+            //         $("h2").css("background-color", "red");
+            //     }
+            // );
+            // $("input").css("background-color", "pink");
+            // $(":checkbox + label").css("background-color", "pink");
+            // $("td:eq(0)").css("background-color", "pink");
+            $("td").eq(0).css("background-color", "pink");
+            // $("td:even").css("background-color", "yellow");
+            $("td")
+                .css("background-color", "brown")
+                .odd()
+                .css("background-color", "pink")
+                .eq(2)
+                .css("background-color", "blue");
+            // $("td:gt(2)").css("background-color", "yellow");
+            // $("td:lt(-3)").css("background-color", "yellow");
+            //
+            // $("td:header").css("background-color", "yellow");
+            // $(":header").css("background-color", "yellow");
+            // $("h3,h2").css("background-color", "yellow");
+        </script>
+    </body>
+</html>

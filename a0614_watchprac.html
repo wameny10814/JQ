@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous"
+/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="product_main d-flex justify-content-center">
+                    <img src="./imgs/product1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="img_wrap d-flex">
+                    <div class="img_body"><img class="w-100" src="./imgs/product1.jpg" alt=""></div>
+                    <div class="img_body"><img class="w-100" src="./imgs/product2.jpg" alt=""></div>
+                    <div class="img_body"><img class="w-100" src="./imgs/product3.jpg" alt=""></div>
+                    <div class="img_body"><img class="w-100" src="./imgs/product4.jpg" alt=""></div>
+                    <div class="img_body"><img class="w-100" src="./imgs/product5.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+            //     $(".img_wrap img").click((e) => {
+            //     console.log("img clicked", $(e.target).attr("src"));
+            //     const img = $(e.target).attr("src");
+            //     $('.product_main img').attr("src",img )
+            // });
+
+            $(".img_wrap img").click(function() {
+                console.log("img clicked", $(this).attr("src"));
+                const img = $(this).attr("src");
+                $('.product_main img').attr("src",img )
+            });
+    </script>
+
+</body>
+</html>

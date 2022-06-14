@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="img_wrap d-flex">
+                <div class="img_box"><img src="./imgs/person1.jpg" alt=""></div>
+                <div class="img_box"><img src="./imgs/person2.jpg" alt=""></div>
+                <div class="img_box"><img src="./imgs/person3.jpg" alt=""></div>
+                <div class="img_box"><img src="./imgs/person4.jpg" alt=""></div>
+                <div class="img_box"><img src="./imgs/person5.jpg" alt=""></div>   
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+                $(".img_box").click((e) => {
+                $(e.currentTarget).css("border", "1px solid red").siblings().css("border", "none");
+            });
+  
+    </script> 
+</body>
+</html>
