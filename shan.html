@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <style>
+            body {
+                height: 500vh;
+            }
+            .container {
+                position: relative;
+           
+            }
+            .div1{
+                background: url("./imgs/山木島_Shanmu_-_首頁/10001.jpeg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 1000px;
+                /* border: 1px solid red; */
+                /* position: fixed;
+                top: 0; */
+            }
+            /* img{
+                width: 100%;
+            } */
+            .div2 {
+                width: 100%;
+                height: 1000px;
+                background-image: url("./imgs/山木島_Shanmu_-_首頁/10002.jpeg");
+                background-size: cover;
+                /* border: 1px solid red; */
+            }
+            .div3 {
+                
+                width: 100%;
+                height: 1000px;
+                background: url("./imgs/山木島_Shanmu_-_首頁/10003.jpeg");
+                background-size: cover;
+                /* border: 1px solid red; */
+            }
+            .p1 {
+                font-size: 300px;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                background-position: 0%;
+                -webkit-background-clip: text;
+                color: transparent;
+                position: fixed;
+                top: 0px;
+                transition: 0.5s;
+                align-items: center;
+                
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="conatiner container-fluid">
+            <div class="d-flex justify-content-center">
+                <p class="p1"></p>
+
+            </div>
+                
+           
+            
+            <div class="div1 container-fluid">
+                <!-- <img src="./imgs/山木島_Shanmu_-_首頁/10001.jpeg" alt=""> -->
+            </div>
+            <div class="div2">
+                <!-- <img src="./imgs/山木島_Shanmu_-_首頁/10002.jpeg" alt=""> -->
+            </div>
+            <div class="div3">
+                <!-- <img src="./imgs/山木島_Shanmu_-_首頁/10003.jpeg" alt=""> -->
+            </div>
+        </div>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            $(window).on("scroll", () => {
+                console.log($(document).scrollTop());
+                // console.log($(".p1").text())
+                const top = $(document).scrollTop();
+                const bpp = $(document).scrollTop() / 100 + "%";
+                $(".p1").css("background-position", bpp);
+                if (top <= 700) {
+                    $(".p1")
+                        .css(
+                            "background",
+                            "url(./imgs/山木島_Shanmu_-_首頁/10001.jpeg)"
+                        )
+                        .text("flowerlollipop")
+                        .css("-webkit-background-clip", "text")
+                        .css("background-position", bpp);
+                }
+
+                if (top >= 700) {
+                    $(".p1")
+                        .css(
+                            "background",
+                            "url(./imgs/山木島_Shanmu_-_首頁/10002.jpeg)"
+                        )
+                        .text("forest pie")
+                        .css("-webkit-background-clip", "text")
+                        .css("background-position", bpp);
+                }
+                if (top >= 1700) {
+                    $(".p1")
+                    .css(
+                            "background",
+                            "url(./imgs/山木島_Shanmu_-_首頁/10003.jpeg)"
+                        )
+                        .text("flowercookie")
+                        .css("-webkit-background-clip", "text")
+                        .css("background-position", bpp);
+                }
+                if (top > 2600) {
+                    $(".p1").css("background", "none");
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>scroll to top</title>
+        <style>
+            body {
+                height: 300vh;
+                background-color: antiquewhite;
+            }
+
+            .box {
+                position: fixed;
+                right: 10px;
+                bottom: 10px;
+                font-size: 2rem;
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="box">Top</button>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            $(".box").click(function () {
+                // $(window).scrollTop(0);
+
+                $("html, body").animate(
+                    {
+                        scrollTop: 0,
+                    },
+                    "slow"
+                );
+            });
+        </script>
+    </body>
+</html>

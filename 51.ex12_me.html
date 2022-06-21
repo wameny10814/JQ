@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ex12</title>
+
+        <style>
+            body {
+                height: 500vh;
+                margin: 0;
+            }
+            .banner {
+                height: 80vh;
+            }
+
+            nav {
+                background: #faf;
+            }
+            
+            nav.fixed {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="banner"></div>
+        <nav class="fixed">I'm Nav</nav>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            // 捲動的時候，必須判斷是否有超過 Nav 的位置
+            const nav_top = $("nav").offset().top;
+            $(window).scroll(function () {
+                console.log("top", $(window).scrollTop());
+                console.log("nav", $("nav").offset().top);
+                const top = $(window).scrollTop();
+                if (top >= nav_top) {
+                    console.log("yes")
+                    $("nav").addClass("fixed")
+                }else{
+                    console.log("no")
+                    $("nav").removeClass("fixed")
+                }
+            });
+        </script>
+    </body>
+</html>

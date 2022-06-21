@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ex11</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+        />
+        <style>
+            .color-demo-area,
+            .color-selector-area {
+                height: 400px;
+                background-color: #ccc;
+            }
+
+            .col-3 .color-selector {
+                /* height: 0px; */
+                width: 100%;
+                /* padding-bottom: 100%; */
+                aspect-ratio: 1/1;
+                background-color: #faf;
+                border-radius: 50%;
+            }
+
+            .col-3:nth-child(1) .color-selector {
+                background-color: lightpink;
+            }
+
+            .col-3:nth-child(2) .color-selector {
+                background-color: lightseagreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="color-demo-area"></div>
+                </div>
+                <div class="col-6">
+                    <div class="color-selector-area d-flex flex-wrap">
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                        <div class="col-3">
+                            <div class="color-selector autobg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            // 點右邊，改左邊
+            // 1.時機點:.color-selector.click()
+            // 2.拿 $(this) 的 background-color
+            // 3.改 .color-demo-area 的 background-color
+
+            $(".color-selector").click(function () {
+                const bgColor = $(this).css("background");
+                $(".color-demo-area").css("background", bgColor);
+            });
+        </script>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <script>
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+            }
+
+            function getRBGA() {
+                return `linear-gradient(135deg, rgba(${getRandomInt(
+                    256
+                )},${getRandomInt(256)},${getRandomInt(
+                    256
+                )},.5), rgba(${getRandomInt(256)},${getRandomInt(
+                    256
+                )},${getRandomInt(256)},.8)`;
+            }
+
+            const elements = document.querySelectorAll(".autobg");
+
+            Array.from(elements).forEach((element, index) => {
+                element.style.backgroundImage = getRBGA();
+            });
+
+            // $('.autobg').each(function (index, currentElement) {
+            //     currentElement.style.backgroundImage = getRBGA();
+            // });
+        </script>
+    </body>
+</html>

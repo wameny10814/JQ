@@ -23,7 +23,7 @@
                 list-style: none;
                 padding: 0;
                 display: flex;
-                width: 500%;
+                width: 700%;
                 /* border: 2px solid rgb(74, 242, 74); */
                 transform: translateX(-0px);
                 transition: 0.5s ease;
@@ -59,14 +59,30 @@
                 margin: 0 5px;
             }
 
-            .slider-dots-area li:nth-child(3) {
+            .slider-dots-area li:nth-child(1) {
                 background: #fff;
+            }
+
+            .next-page-area {
+                background-color: #afa;
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 10%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
             }
         </style>
     </head>
     <body>
         <div class="wrap">
             <ul class="train">
+                <li>
+                    <img src="./imgs/slide5.jpg" alt="" />
+                </li>
                 <li>
                     <img src="./imgs/slide1.jpg" alt="" />
                 </li>
@@ -82,6 +98,9 @@
                 <li>
                     <img src="./imgs/slide5.jpg" alt="" />
                 </li>
+                <li>
+                    <img src="./imgs/slide1.jpg" alt="" />
+                </li>
             </ul>
 
             <ul class="slider-dots-area">
@@ -91,6 +110,10 @@
                 <li></li>
                 <li></li>
             </ul>
+
+            <div class="next-page-area">
+                <button>></button>
+            </div>
         </div>
 
         <script src="./jquery-3.6.0.js"></script>
@@ -105,6 +128,8 @@
             // 2 -> -1600px
             // 3 -> -2400px
 
+            let nowPage = 1;
+            trainMove(nowPage);
             $(".slider-dots-area li").mouseenter(function () {
                 console.log("hi", $(this).index());
                 // const moveX = [
@@ -115,17 +140,56 @@
                 //     "-3200px",
                 // ];
                 // console.log(moveX[$(this).index()]);
+                nowPage = $(this).index() + 1;
+                trainMove(nowPage);
+            });
 
-                const moveX = $(this).index() * -800 + "px";
+            $(".next-page-area").click(function () {
+                console.log("next-page-area");
+                nowPage++;
+                if (nowPage > 5) {
+                    trainMoveWithoutTransition(0);
+                } else {
+                    trainMove(nowPage);
+                }
+            });
 
+            function trainMove(index) {
+                console.log("trainMove nowPage", index);
+                nowPage = index;
+                const moveX = index * -800 + "px";
                 // 火車移動到 moveX 的位置
-                $("ul.train").css("transform", `translateX(${moveX})`);
+                $("ul.train")
+                    .css("transition", ".5s ease")
+                    .css("transform", `translateX(${moveX})`);
 
-                $(this)
+                $(".slider-dots-area li")
+                    .eq(index - 1)
                     .css("background", "#fff")
                     .siblings()
                     .css("background", "transparent");
-            });
+            }
+
+            function trainMoveWithoutTransition(index) {
+                console.log("nowPage", index);
+                const moveX = index * -800 + "px";
+                // 火車移動到 moveX 的位置
+                $("ul.train")
+                    .css("transition", "none")
+                    .css("transform", `translateX(${moveX})`);
+
+                setTimeout(() => {
+                    trainMove(index + 1);
+                }, 0);
+            }
+
+            // $("ul.train").on("transitionend", function () {
+            //     console.log("transitionend nowPage", nowPage);
+            //     if (nowPage >= 5) {
+            //         nowPage = 0;
+            //         trainMoveWithoutTransition();
+            //     }
+            // });
         </script>
     </body>
 </html>

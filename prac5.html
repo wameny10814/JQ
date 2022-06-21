@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="row">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                </th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row" class="row">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                </th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row" class="row">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                </th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        //   $("input:checked").parent().parent().css("background-color","red")
+
+
+        // $(".form-check-input").click(function () {
+        //     if($(this).prop("checked")){
+        //         $(this).parent().parent().css("background-color", "lightblue");
+
+        //     }else{
+        //         $(this).parent().parent().css("background-color", "transparent");
+        //     }
+            
+        // })
+        $(".form-check-input").click(function () {
+            if($(this).is(":checked")){
+                $(this).parent().parent().css("background-color", "lightblue");
+
+            }else{
+                $(this).parent().parent().css("background-color", "transparent");
+            }
+            
+        })
+        // $("input:not(:ckecked)").parent().parent().css("background-color", "transparent")
+        // $( "input:not(:checked)" ).parent().parent().css("background-color", "transparent")
+        //  
+
+    </script>
+</body>
+
+</html>

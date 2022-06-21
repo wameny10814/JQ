@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ex10</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+        />
+        <style>
+            .fontS {
+                font-size: 0.8rem;
+            }
+
+            .fontM {
+                font-size: 1rem;
+            }
+
+            .fontL {
+                font-size: 1.2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="d-flex justify-content-end">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary btn_s">
+                        S
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-secondary btn_m active"
+                    >
+                        M
+                    </button>
+                    <button type="button" class="btn btn-secondary btn_l">
+                        L
+                    </button>
+                </div>
+            </div>
+
+            <h2>jQuery</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                ipsum doloribus iusto sapiente repellat perferendis totam autem
+                sequi, reprehenderit repudiandae, impedit soluta quod maiores
+                sint tenetur, aut aperiam? Odio, labore!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                ipsum doloribus iusto sapiente repellat perferendis totam autem
+                sequi, reprehenderit repudiandae, impedit soluta quod maiores
+                sint tenetur, aut aperiam? Odio, labore!
+            </p>
+        </div>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            $(".btn_s").click(function () {
+                if (
+                    $(".btn_m").hasClass("active") &&
+                    $(".btn_l").hasClass("active")
+                ) {
+                    $(".btn_m").removeClass("active");
+                    $(".btn_l").removeClass("active");
+                }
+
+                $(".btn_s").addClass("active");
+                $("p").removeClass("fontM");
+                $("p").removeClass("fontL");
+                $("p").addClass("fontS");
+            });
+            $(".btn_m").click(function () {
+                $(".btn_s").removeClass("active");
+                $(".btn_l").removeClass("active");
+                $(".btn_m").addClass("active");
+                $("p").removeClass("fontS");
+                $("p").removeClass("fontL");
+                $("p").addClass("fontM");
+            });
+            $(".btn_l").click(function () {
+                $(".btn_s").removeClass("active");
+                $(".btn_m").removeClass("active");
+                $(".btn_l").addClass("active");
+                $("p").removeClass("fontS");
+                $("p").removeClass("fontM");
+                $("p").addClass("fontL");
+            });
+        </script>
+    </body>
+</html>

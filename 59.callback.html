@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>callback</title>
+    </head>
+    <body>
+        <script>
+            a(b);
+            function a(cb1) {
+                setTimeout(() => {
+                    console.log("a");
+                    cb1(c);
+                }, 1000);
+            }
+
+            function b(cb2) {
+                setTimeout(() => {
+                    console.log("b");
+                    cb2();
+                }, 2000);
+            }
+
+            function c() {
+                setTimeout(() => {
+                    console.log("c");
+                }, 1500);
+            }
+        </script>
+    </body>
+</html>

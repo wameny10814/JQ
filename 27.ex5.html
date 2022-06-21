@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ex5</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <table class="table table-bordered mt-3">
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>Elon Musk</td>
+                        <td>ElonMusk@gmail.com</td>
+                        <td>0912345678</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>Elon Musk</td>
+                        <td>ElonMusk@gmail.com</td>
+                        <td>0912345678</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>Elon Musk</td>
+                        <td>ElonMusk@gmail.com</td>
+                        <td>0912345678</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" checked />
+                        </td>
+                        <td>Elon Musk</td>
+                        <td>ElonMusk@gmail.com</td>
+                        <td>0912345678</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            $(":checkbox").click(function () {
+                console.log("hi", $(this).prop("checked"));
+
+                if ($(this).prop("checked")) {
+                    $(this).parent().parent().css("background", "lightblue");
+                } else {
+                    $(this).parent().parent().css("background", "transparent");
+                }
+
+                // if (
+                //     $(this).parent().parent().css("background-color") ===
+                //     "rgb(173, 216, 230)"
+                // ) {
+                //     $(this).parent().parent().css("background", "transparent");
+                // } else {
+                //     $(this).parent().parent().css("background", "lightblue");
+                // }
+                // console.log($(this).parent().parent().css("background-color"));
+            });
+        </script>
+    </body>
+</html>

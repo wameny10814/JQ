@@ -2,69 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+  integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
 
 <body>
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h3>會員註冊</h3>
-                <form name="form1" class="form1" onsubmit="adddata(); return false" novalidate>
-      
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">*帳號</label>
-                    <input type="text" class="form-control" id="account" name="account" placeholder="帳號" value="">
-                  </div>
-                  <div class="mb-3" autocomplete="off">
-                    <label for="formGroupExampleInput" class="form-label" autocomplete="off">*密碼</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="密碼" autocomplete="off">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">*姓名</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="姓名" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">*電子信箱</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="電子信箱">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">出生日期</label>
-                    <input type="date" class="form-control" id="birthday" name="birthday" placeholder="出生日期">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">手機</label>
-                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="手機" pattern="09\d{8}">
-                  </div>
-                  <div class="mb-3">
-                    <label for="formGroupExampleInput" class="form-label">地址</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="地址">
-                  </div>
-                  <div name="red" class="red"></div>
-                  <button type="submit" class="btn btn_info btn-primary">填入資料</button>
-                  <button type="submit" class="btn btn-primary">送出</button>
-                </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h3>會員註冊</h3>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
-            </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+              <button class=" btn_info ">填入資料</button>
+            </form>
           </div>
         </div>
       </div>
-      <script src="./jquery-3.6.0.js"></script>
-      <script>
-                    $(".btn_info").click(function(){
-                
-                    $("#account").attr("value","1594");
-                
-            });
-      </script> 
-    
+    </div>
+  </div>
+  <script src="./jquery-3.6.0.js"></script>
+  <script>
+    $(".btn_info").click(function () {
+
+      $("#exampleInputEmail1").attr("value", "1594");
+      $("#exampleInputPassword1").attr("value", "1594");
+      
+
+    });
+  </script>
+
 
 </body>
 

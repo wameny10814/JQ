@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
 </head>
+<style>
+    div{
+        border: 1px solid transparent;
+    }
+</style>
 <body>
     <div class="container">
         <div class="row">
@@ -23,8 +28,11 @@
     <script src="./jquery-3.6.0.js"></script>
     <script>
                 $(".img_box").click((e) => {
+                    console.log($(e.currentTarget))
                 $(e.currentTarget).css("border", "1px solid red").siblings().css("border", "none");
             });
+            
+            
   
     </script> 
 </body>
